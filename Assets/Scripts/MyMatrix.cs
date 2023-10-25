@@ -118,30 +118,30 @@ namespace MatrixVectorNamespace
         public MyMatrix Multiply(MyMatrix pMyMatrix)
         {
             /*
-             float[,] result = new float[4, 4];
+            float[,] result = new float[4, 4];
 
-             for (int i = 0; i < 4; i++)
-             {
-                 for (int j = 0; j < 4; j++)
-                 {
-                     float sum = 0;
-                     for (int k = 0; k < 4; k++)
-                     {
-                         sum += this.GetElement(i, k) * pMyMatrix.GetElement(k, j);
-                     }
-                     result[i, j] = sum;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    float sum = 0;
+                    for (int k = 0; k < 4; k++)
+                    {
+                        sum += this.GetElement(i, k) * pMyMatrix.GetElement(k, j);
+                    }
+                    result[i, j] = sum;
 
-                 }
+                }
 
-             }
-             MyMatrix m = new MyMatrix(
-                 result[0, 0], result[0, 1], result[0, 2], result[0, 3],
-                 result[1, 0], result[1, 1], result[1, 2], result[1, 3],
-                 result[2, 0], result[2, 1], result[2, 2], result[2, 3],
-                 result[3, 0], result[3, 1], result[3, 2], result[3, 3]);
+            }
+            MyMatrix m = new MyMatrix(
+                result[0, 0], result[0, 1], result[0, 2], result[0, 3],
+                result[1, 0], result[1, 1], result[1, 2], result[1, 3],
+                result[2, 0], result[2, 1], result[2, 2], result[2, 3],
+                result[3, 0], result[3, 1], result[3, 2], result[3, 3]);
 
-             return m;
-             */
+            return m;
+            */
 
             /*
             int thisMatrixNumRows = matrix.GetLength(0);
@@ -169,7 +169,26 @@ namespace MatrixVectorNamespace
 
             return m;
             */
-            return null;
+
+            
+            return new MyMatrix(
+                matrix[0][0] * pMyMatrix.matrix[0][0] + matrix[1][0] * pMyMatrix.matrix[0][1] + matrix[2][0] * pMyMatrix.matrix[0][2] + matrix[3][0] * pMyMatrix.matrix[0][3],
+                matrix[0][0] * pMyMatrix.matrix[1][0] + matrix[1][0] * pMyMatrix.matrix[1][1] + matrix[2][0] * pMyMatrix.matrix[1][2] + matrix[3][0] * pMyMatrix.matrix[1][3],
+                matrix[0][0] * pMyMatrix.matrix[2][0] + matrix[1][0] * pMyMatrix.matrix[2][1] + matrix[2][0] * pMyMatrix.matrix[2][2] + matrix[3][0] * pMyMatrix.matrix[2][3],
+                matrix[0][0] * pMyMatrix.matrix[3][0] + matrix[1][0] * pMyMatrix.matrix[3][1] + matrix[2][0] * pMyMatrix.matrix[3][2] + matrix[3][0] * pMyMatrix.matrix[3][3],
+                matrix[0][1] * pMyMatrix.matrix[0][0] + matrix[1][1] * pMyMatrix.matrix[0][1] + matrix[2][1] * pMyMatrix.matrix[0][2] + matrix[3][1] * pMyMatrix.matrix[0][3],
+                matrix[0][1] * pMyMatrix.matrix[1][0] + matrix[1][1] * pMyMatrix.matrix[1][1] + matrix[2][1] * pMyMatrix.matrix[1][2] + matrix[3][1] * pMyMatrix.matrix[1][3],
+                matrix[0][1] * pMyMatrix.matrix[2][0] + matrix[1][1] * pMyMatrix.matrix[2][1] + matrix[2][1] * pMyMatrix.matrix[2][2] + matrix[3][1] * pMyMatrix.matrix[2][3],
+                matrix[0][1] * pMyMatrix.matrix[3][0] + matrix[1][1] * pMyMatrix.matrix[3][1] + matrix[2][1] * pMyMatrix.matrix[3][2] + matrix[3][1] * pMyMatrix.matrix[3][3],
+                matrix[0][2] * pMyMatrix.matrix[0][0] + matrix[1][2] * pMyMatrix.matrix[0][1] + matrix[2][2] * pMyMatrix.matrix[0][2] + matrix[3][2] * pMyMatrix.matrix[0][3],
+                matrix[0][2] * pMyMatrix.matrix[1][0] + matrix[1][2] * pMyMatrix.matrix[1][1] + matrix[2][2] * pMyMatrix.matrix[1][2] + matrix[3][2] * pMyMatrix.matrix[1][3],
+                matrix[0][2] * pMyMatrix.matrix[2][0] + matrix[1][2] * pMyMatrix.matrix[2][1] + matrix[2][2] * pMyMatrix.matrix[2][2] + matrix[3][2] * pMyMatrix.matrix[2][3],
+                matrix[0][2] * pMyMatrix.matrix[3][0] + matrix[1][2] * pMyMatrix.matrix[3][1] + matrix[2][2] * pMyMatrix.matrix[3][2] + matrix[3][2] * pMyMatrix.matrix[3][3],
+                matrix[0][3] * pMyMatrix.matrix[0][0] + matrix[1][3] * pMyMatrix.matrix[0][1] + matrix[2][3] * pMyMatrix.matrix[0][2] + matrix[3][3] * pMyMatrix.matrix[0][3],
+                matrix[0][3] * pMyMatrix.matrix[1][0] + matrix[1][3] * pMyMatrix.matrix[1][1] + matrix[2][3] * pMyMatrix.matrix[1][2] + matrix[3][3] * pMyMatrix.matrix[1][3],
+                matrix[0][3] * pMyMatrix.matrix[2][0] + matrix[1][3] * pMyMatrix.matrix[2][1] + matrix[2][3] * pMyMatrix.matrix[2][2] + matrix[3][3] * pMyMatrix.matrix[2][3],
+                matrix[0][3] * pMyMatrix.matrix[3][0] + matrix[1][3] * pMyMatrix.matrix[3][1] + matrix[2][3] * pMyMatrix.matrix[3][2] + matrix[3][3] * pMyMatrix.matrix[3][3]);
+            
         }
         
 
